@@ -46,8 +46,62 @@ public class GradeBook {
 		
 		inFile.close();
 		
-		//test print
-		System.out.println("---No Errors---");
+		for(int i=0; i<list.length; i++) {
+			System.out.println( list[i].toString() );
+		}
+		
+		//---ENTER MENU DRIVEN CASE STATEMENTS HERE---
+		boolean flag = true;
+		int userInput;
+		Scanner console = new Scanner(System.in);
+		
+		while(flag) {
+			
+			System.out.println("\n"
+					+ "1. Output student information. \n"
+					+ "2. Output the class average. \n"
+					+ "3. Get the highest scoring student. \n"
+					+ "4. Get students with an 'A' grade. \n"
+					+ "5. Exit program.");
+			
+			System.out.println("--Enter your command: ");
+			
+			userInput = console.nextInt();
+			
+			/**
+			 * switch statements to retrieve user's requests.
+			 */
+			switch(userInput) {
+				case 1: //output student information
+					/*
+					String studentID = "ID";
+					String studentFirst = "First";
+					String studentLast = "Last";
+					String studentMidterm = "Midterm";
+					String studentFinal = "Final";
+					String studentHomework = "Homework";
+					*/
+					
+					System.out.println("--- Student information ---");
+					System.out.println("ID    First	 Last	    Midterm    Final	 Homework"
+							+"  Average Grade");
+					
+					for(int i=0; i<list.length; i++) {
+						System.out.println( list[i].toString() );
+					}
+				case 2: //output the class average
+					System.out.println("--- Class Average");
+			
+				case 3: //output highest scoring student
+					System.out.println("--- Highest scorer ---");
+					
+				case 4: //output all students with an 'A' grade
+					System.out.println("--- Students with 'A' grades ---");
+					
+			}//end switch
+			
+		}//end while
+		
 		
 	}
 

@@ -72,7 +72,7 @@ public class StudentData {
 	}
 	
 	public double calculateAverage() {
-		return (midtermScore * 3.0 + finalScore * 0.4 + homeworkScore * 0.3);
+		return (midtermScore * 0.3 + finalScore * 0.4 + homeworkScore * 0.3);
 	}
 	
 	public char calculateGrade() {
@@ -97,7 +97,7 @@ public class StudentData {
 	
 	@Override
 	public String toString() {
-		return String.format("%-5d %-12s %-14s %-5.2f %-8.2f %-9.2f %-9.2f %-13c",
+		return String.format("%-5d %-10s %-10s %-10.2f %-9.2f %-9.2f %-9.2f %-13c",
 				id, firstName, lastName, midtermScore, finalScore, homeworkScore,
 				calculateAverage(), calculateGrade() );
 	}
