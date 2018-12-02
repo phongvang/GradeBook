@@ -71,5 +71,36 @@ public class StudentData {
 		this.homeworkScore = homeworkScore;
 	}
 	
+	public double calculateAverage() {
+		return (midtermScore * 3.0 + finalScore * 0.4 + homeworkScore * 0.3);
+	}
+	
+	public char calculateGrade() {
+		char grade;
+		double avgScore, aGrade = 90, bGrade = 80, cGrade = 70, dGrade = 60;
+		
+		avgScore = calculateAverage();
+		
+		if( avgScore >= aGrade)
+			grade = 'A';
+		else if(avgScore >= bGrade)
+			grade = 'B';
+		else if(avgScore >= cGrade)
+			grade = 'C';
+		else if(avgScore >= dGrade)
+			grade = 'D';
+		else
+			grade = 'F';
+		
+		return grade;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%-5d %-12s %-14s %-5.2f %-8.2f %-9.2f %-9.2f %-13c",
+				id, firstName, lastName, midtermScore, finalScore, homeworkScore,
+				calculateAverage(), calculateGrade() );
+	}
+	
 }
 

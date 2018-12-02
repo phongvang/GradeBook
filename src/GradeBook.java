@@ -47,7 +47,7 @@ public class GradeBook {
 		inFile.close();
 		
 		//test print
-		System.out.println("No Errors");
+		System.out.println("---No Errors---");
 		
 	}
 
