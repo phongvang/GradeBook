@@ -22,7 +22,7 @@ public class GradeBook {
 		StudentData [] list = new StudentData[10];
 		
 		/**
-		 * A scanner object associated with the data file
+		 * A scanner object associated with the input data file
 		 */
 		Scanner inFile = new Scanner(new FileReader("student_data.txt"));
 		
@@ -89,14 +89,44 @@ public class GradeBook {
 					for(int i=0; i<list.length; i++) {
 						System.out.println( list[i].toString() );
 					}
+					
+					break;
+					
 				case 2: //output the class average
-					System.out.println("--- Class Average");
-			
+					System.out.println("--- Class Average ---");
+					double sum = 0;
+					double classAvg = 0;
+					int count =0;
+					
+					for(int i=0; i<list.length; i++) {
+						sum += list[i].calculateAverage();
+						count ++;
+					}
+					
+					classAvg = sum / count;
+					
+					System.out.printf("%.2f\n", classAvg);
+					
+					break;
+					
 				case 3: //output highest scoring student
 					System.out.println("--- Highest scorer ---");
 					
+					break;
+					
 				case 4: //output all students with an 'A' grade
 					System.out.println("--- Students with 'A' grades ---");
+					
+					
+					break;
+				case 5: 
+					System.out.println("Program Terminated.");
+					flag = false;
+					break;
+				
+				default:
+					System.out.println("Invalid command, try again");
+					break;
 					
 			}//end switch
 			
