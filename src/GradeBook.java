@@ -52,7 +52,7 @@ public class GradeBook {
 		
 		//---ENTER MENU DRIVEN CASE STATEMENTS HERE---
 		boolean flag = true;
-		int userInput;
+		int userInput = 0;
 		Scanner console = new Scanner(System.in);
 		
 		while(flag) {
@@ -65,8 +65,13 @@ public class GradeBook {
 					+ "5. Exit program.");
 			
 			System.out.println("--Enter your command: ");
-			
-			userInput = console.nextInt();
+			try {
+				userInput = console.nextInt();
+			} catch(Exception e) {
+				System.out.println("Invalid Input. Please try again.");
+				System.out.println("Program Terminated.");
+				break;
+			} 
 			
 			/**
 			 * switch statements to retrieve user's requests.
@@ -123,7 +128,6 @@ public class GradeBook {
 						if(list[i].calculateGrade() == 'A')
 							System.out.println(list[i]);
 					}
-					
 					
 					break;
 				case 5: 
