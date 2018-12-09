@@ -73,15 +73,6 @@ public class GradeBook {
 			 */
 			switch(userInput) {
 				case 1: //output student information
-					/*
-					String studentID = "ID";
-					String studentFirst = "First";
-					String studentLast = "Last";
-					String studentMidterm = "Midterm";
-					String studentFinal = "Final";
-					String studentHomework = "Homework";
-					*/
-					
 					System.out.println("--- Student information ---");
 					System.out.println("ID    First	 Last	    Midterm    Final	 Homework"
 							+"  Average Grade");
@@ -96,7 +87,7 @@ public class GradeBook {
 					System.out.println("--- Class Average ---");
 					double sum = 0;
 					double classAvg = 0;
-					int count =0;
+					int count = 0;
 					
 					for(int i=0; i<list.length; i++) {
 						sum += list[i].calculateAverage();
@@ -109,13 +100,29 @@ public class GradeBook {
 					
 					break;
 					
-				case 3: //output highest scoring student
-					System.out.println("--- Highest scorer ---");
+				case 3: //output highest average scoring student
+					System.out.println("--- Highest Average Score ---");
+					int highIndex = 0;
+					
+					for(int i=1; i<list.length; i++) {
+						if(list[highIndex].calculateAverage() < list[i].calculateAverage())
+							highIndex = i;
+					}
+					System.out.println("ID    First	 Last	    Midterm    Final	 Homework"
+							+"  Average Grade");
+					System.out.println(list[highIndex]);
 					
 					break;
 					
 				case 4: //output all students with an 'A' grade
 					System.out.println("--- Students with 'A' grades ---");
+					System.out.println("ID    First	 Last	    Midterm    Final	 Homework"
+							+"  Average Grade");
+					
+					for(int i=0; i<list.length; i++) {
+						if(list[i].calculateGrade() == 'A')
+							System.out.println(list[i]);
+					}
 					
 					
 					break;
