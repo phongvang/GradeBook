@@ -50,7 +50,6 @@ public class GradeBook {
 			System.out.println( list[i].toString() );
 		}
 		
-		//---ENTER MENU DRIVEN CASE STATEMENTS HERE---
 		boolean flag = true;
 		int userInput = 0;
 		Scanner console = new Scanner(System.in);
@@ -65,6 +64,7 @@ public class GradeBook {
 					+ "5. Exit program.");
 			
 			System.out.println("--Enter your command: ");
+			
 			try {
 				userInput = console.nextInt();
 			} catch(Exception e) {
@@ -72,6 +72,7 @@ public class GradeBook {
 				System.out.println("Program Terminated.");
 				break;
 			} 
+			
 			
 			/**
 			 * switch statements to retrieve user's requests.
@@ -136,14 +137,10 @@ public class GradeBook {
 					break;
 				
 				default:
-					System.out.println("Invalid command, try again");
+					System.out.println("Invalid command, try again.");
 					break;
 					
-			}//end switch
-			
+			}//end switch			
 		}//end while
-		
-		
-	}
-
-}
+	}//end main
+}//end class
